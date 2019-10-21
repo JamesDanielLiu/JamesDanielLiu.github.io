@@ -3,7 +3,7 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Hello World | Hi,I am 刘志鸿·DanieLiu</title>
+  <title>ES6开发者的7个技巧 | Hi,I am 刘志鸿·DanieLiu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content>
   <meta name="keywords" content>
@@ -49,28 +49,45 @@
   <div class="page-title">
     <div class="avatar"><a href="/"><img src="/images/person_1.jpg"></a></div>
     <span>2019-10-16</span>
-    <h2>Hello World</h2>
+    <h2>ES6开发者的7个技巧</h2>
     
-    </div>
+    <div class="social-links">
+<a href="https://github.com/JamesDanielLiu" target="_blank"><i class="fa fa-github fa-fw"></i></a><a href="962829452@qq.com"><i class="fa fa-envelope fa-fw"></i></a>
+</div></div>
 </div>
 </div>
 <div id="lx-main-content">
   <div class="lx-post">
     <div class="lx-entry padding">
       <div>
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <h2 id="先看一下ES6的新特性："><a href="#先看一下ES6的新特性：" class="headerlink" title="先看一下ES6的新特性："></a>先看一下ES6的新特性：</h2><pre><code>·Default Parameters in ES6（默认参数）
+·Template Literals in ES6（模板文本）
+·Multi-line Strings in ES6（多行字符串）
+·Destructuring Assignment in ES6（解构赋值）
+·Enhanced Object Literals in ES6（增强的对象文本）
+·Arrow Functions in ES6（箭头函数）
+·Promises in ES6
+·Block-Scoped Constructs Let and Const（块作用域构造 Let and Const）
+·Classes in ES6（类）
+·Modules in ES6（模块）</code></pre><hr>
+<h3 id="Swap-variables-交换变量"><a href="#Swap-variables-交换变量" class="headerlink" title="Swap variables 交换变量"></a>Swap variables 交换变量</h3><p>使用 Array Destructuring 交换值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let a = &quot;hello&quot;,b = &quot;world!&quot;;</span><br><span class="line">[a,b] = [b,a];</span><br><span class="line">console.log(a);	//world!</span><br><span class="line">console.log(b);	//hello</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="Async-Await-with-Destructuring"><a href="#Async-Await-with-Destructuring" class="headerlink" title="Async/Await with Destructuring"></a>Async/Await with Destructuring</h3><p>下面这段代码可以同时发起两个异步请求，把请求结果分别附到 user 和 account 中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const [user,account] = await Promise.all([</span><br><span class="line">  fetch(&apos;user&apos;),</span><br><span class="line">  fetch(&apos;account&apos;)</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h3 id="Debugging"><a href="#Debugging" class="headerlink" title="Debugging"></a>Debugging</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const a = 1,b = 2,c = 3;</span><br><span class="line">console.log(&#123;a,b,c&#125;);</span><br><span class="line">/*</span><br><span class="line">&#123;</span><br><span class="line">	a : 1,</span><br><span class="line">    b : 2,</span><br><span class="line">    c : 3</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h3 id="One-liners"><a href="#One-liners" class="headerlink" title="One liners"></a>One liners</h3><p>更紧凑的数组操作语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const max = (arr) =&gt; Math.max(...arr);</span><br><span class="line">max([123,321,132])  //output 321</span><br><span class="line"></span><br><span class="line">const sum = (arr) =&gt; arr.reduce((a, b) =&gt; (a + b), 0)</span><br><span class="line">sum([1, 2, 3, 4])   // output: 10</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h3 id="Array-concatenation"><a href="#Array-concatenation" class="headerlink" title=" Array concatenation"></a> Array concatenation</h3><p>展开运算符可以代替concat</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const a = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;];</span><br><span class="line">const b = [&apos;d&apos;,&apos;e&apos;,&apos;f&apos;];</span><br><span class="line">const c = [&apos;g&apos;,&apos;h&apos;,&apos;i&apos;];</span><br><span class="line">//old way</span><br><span class="line">const getString = a.concat(b,c);</span><br><span class="line">//new!</span><br><span class="line">const newGetString = [...a,...b,...c];</span><br></pre></td></tr></table></figure>
+
+<h3 id="Cloning"><a href="#Cloning" class="headerlink" title="Cloning"></a>Cloning</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const obj = &#123;...oldobj&#125;;</span><br><span class="line">const arr = [...oldarr];</span><br></pre></td></tr></table></figure>
+
+<h2 id="Named-parameters-参数命名"><a href="#Named-parameters-参数命名" class="headerlink" title="Named parameters 参数命名"></a>Named parameters 参数命名</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const getStuffNotBad = (id, force, verbose) =&gt; &#123;</span><br><span class="line">  //...do someting</span><br><span class="line">&#125;</span><br><span class="line">const getStuffAwesome = (&#123; id, name, force, verbose &#125;) =&gt; &#123;</span><br><span class="line">  //...do someting</span><br><span class="line">&#125;</span><br><span class="line">// Somewhere else in the codebase... WTF is true, true?</span><br><span class="line">getStuffNotBad(150, true, true)</span><br><span class="line">// Somewhere else in the codebase... I ❤ JS!!!</span><br><span class="line">getStuffAwesome(&#123; id: 150, force: true, verbose: true &#125;)</span><br></pre></td></tr></table></figure>
+
 
       </div>
     </div>
@@ -125,7 +142,7 @@
         </div>
         <div class="row for-name">
           <p></p>
-          <span class="tagline">Hello, World!</span>
+          <span class="tagline">刘志鸿</span>
         </div>
       </div>
     </span>
